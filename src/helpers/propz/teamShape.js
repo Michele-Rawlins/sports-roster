@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const teamShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  uid: PropTypes.string.isRequired,
 });
 
 

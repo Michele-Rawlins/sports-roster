@@ -18,6 +18,7 @@ deletePlayerEvent = (e) => {
 
 render() {
   const { player } = this.props;
+
   return (
     <div className="Player col-3">
       <div className="card">
