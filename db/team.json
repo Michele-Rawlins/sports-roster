@@ -1,0 +1,14 @@
+{
+  "team1": {
+    "name": "Munchkins",
+    "location": "oz"
+  },
+  "team2": {
+    "name": "Toaddies",
+    "location": "Meadows"
+  },
+  "team3": {
+    "name": "Misfits",
+    "location": "Lake Bella"
+  }
+}
