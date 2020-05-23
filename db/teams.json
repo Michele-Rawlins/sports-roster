@@ -1,0 +1,17 @@
+{
+  "team1": {
+    "name": "Munchkins",
+    "location": "oz",
+    "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2"
+  },
+  "team2": {
+    "name": "Toaddies",
+    "location": "Meadows",
+    "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2"
+  },
+  "team3": {
+    "name": "Misfits",
+    "location": "Lake Bella",
+    "uid": "1234"
+  }
+}
