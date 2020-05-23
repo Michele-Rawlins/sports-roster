@@ -24,7 +24,7 @@ class Team extends React.Component {
           <div className="card-body">
             <h5 className="card-title"> {team.name}</h5>
             <p className="card-location">{team.location}</p>
-            <button className="btn btn-dark" onClick={this.openSingleTeamEvent}>View Plaeyers</button>
+            <button className="btn btn-dark" onClick={this.openSingleTeamEvent}>View Players</button>
           </div>
         </div>
       </div>
