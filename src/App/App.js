@@ -8,11 +8,15 @@ import './App.scss';
 
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+import TeamContainer from '../components/TeamContainer/TeamContainer';
+import SingleTeam from '../components/SingleTeam/SingleTeam';
+
 
 fbConnection();
 class App extends React.Component {
 state = {
   authed: false,
+  singleTeamId: '',
 }
 
 componentDidMount() {
@@ -29,12 +33,23 @@ componentWillUnmount() {
   this.removeListener();
 }
 
+setSingleTeam = (teamId) => {
+  this.setState({ singleTeamId: teamId });
+}
+
+
 render() {
-  const { authed } = this.state;
+  const { authed, singleTeamId } = this.state;
 
   const loadComponent = () => {
     let componentToLoad = '';
-    componentToLoad = <Auth />;
+    if (authed && singleTeamId.length === 0) {
+      componentToLoad = <TeamContainer setSingleTeam={this.setSingleTeam}/>;
+    } else if (authed && singleTeamId.length > 0) {
+      componentToLoad = <SingleTeam teamId={singleTeamId} setSingleTeam={this.setSingleTeam}/>;
+    } else {
+      componentToLoad = <Auth />;
+    }
     return componentToLoad;
   };
 
