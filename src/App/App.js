@@ -7,6 +7,7 @@ import fbConnection from '../helpers/data/connection';
 import './App.scss';
 
 import Auth from '../components/Auth/Auth';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
 
 fbConnection();
 class App extends React.Component {
@@ -15,7 +16,7 @@ state = {
 }
 
 componentDidMount() {
-  this.removeListner = firebase.auth().onAuthStateChanged((user) => {
+  this.removeListener = firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       this.setState({ authed: true });
     } else {
@@ -25,21 +26,23 @@ componentDidMount() {
 }
 
 componentWillUnmount() {
-  this.removeListner();
+  this.removeListener();
 }
 
 render() {
   const { authed } = this.state;
+
   const loadComponent = () => {
     let componentToLoad = '';
-    componentToLoad = < Auth />;
+    componentToLoad = <Auth />;
     return componentToLoad;
   };
+
   return (
       <div className="App">
         <MyNavbar authed={authed}/>
         <h1>Sports Roster</h1>
-        {loadComponent}
+        {loadComponent()}
       </div>
   );
 }
