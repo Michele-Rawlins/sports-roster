@@ -11,24 +11,26 @@ static propTypes = {
 
 deletePlayerEvent = (e) => {
   e.preventDefault();
-  
+  const { player, removePlayer } = this.props;
+  removePlayer(player.id);
 }
 
 
-  render() {
-    const { player } = this.props;
-    return (
+render() {
+  const { player } = this.props;
+  return (
     <div className="Player col-3">
       <div className="card">
         <img className="card-img-top" src={player.imageUrl} alt="player" />
         <div className="card-body">
           <h3 className="card-name">{player.name}</h3>
           <p className="card-position">{player.position}</p>
+          <button className="btn btn-danger" onClick={this.deletePlayerEvent}><i className="fas fa-dumpster"></i></button>
           </div>
       </div>
     </div>
-    );
-  }
+  );
+}
 }
 
 export default Player;
