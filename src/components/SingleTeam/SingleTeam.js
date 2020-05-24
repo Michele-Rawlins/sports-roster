@@ -26,6 +26,9 @@ getInfo = () => {
       this.setState({ team });
       playerData.getPlayersByTeamId(teamId)
         .then((players) => this.setState({ players }));
+      // const { p } = this.props;
+      // playerData.getSinglePlayer(p)
+      //   .then((players) => this.setState({ players }));
     })
     .catch((err) => console.error('unable to get single team', err));
 }
@@ -45,6 +48,7 @@ render() {
   const { team, players } = this.state;
 
   const makePlayers = players.map((p) => <Player key={p.id} player={p} removePlayer={this.removePlayer}/>);
+
 
   return (
       <div className="SingleTeam">

@@ -11,7 +11,7 @@ const getPlayersByTeamId = (teamId) => new Promise((resolve, reject) => {
       if (allPlayersObject !== null) {
         Object.keys(allPlayersObject).forEach((playerId) => {
           const newPlayer = allPlayersObject[playerId];
-          newPlayer.is = playerId;
+          newPlayer.id = playerId;
           players.push(newPlayer);
         });
       }
@@ -20,6 +20,8 @@ const getPlayersByTeamId = (teamId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getSinglePlayer = (playerId) => axios.get(`${baseUrl}/players/${playerId}.json`);
+
 const deletePlayer = (playerId) => axios.delete(`${baseUrl}/players/${playerId}.json`);
 
-export default { getPlayersByTeamId, deletePlayer };
+export default { getPlayersByTeamId, deletePlayer, getSinglePlayer };
