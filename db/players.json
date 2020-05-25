@@ -82,5 +82,47 @@
  "position":"Vine Swinger",
   "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
   "teamId": "team2"
+},
+"player13" :{
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRnfe09k13LCBsnIASPT7aXCtJuMGqLqYaGtAV4LRjTxIHUclgV&usqp=CAU",
+  "name": "PinkyBelle",
+  "position":"Dark Arts",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
+},
+"player14": {
+"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSo2v4hFGMDlQfpL09AOSQzFDmECpoQ784wxmGAq1OzI_YG9EZL&usqp=CAU",
+  "name": "Artsy",
+  "position":"Healer",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
+},
+"player15": {
+ "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQptOwk8ZHy0DN43WKziH27UHjuhfMn2S92iq1ydKDc3-S4M8vh&usqp=CAU",
+  "name": "Lavish",
+  "position":"Light Runner",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
+},
+"player16": {
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSkGhTFLZF4a3vypOVQMLOy_cCsosjIW06Mx5LIHPkpOEpVFM0-&usqp=CAU",
+  "name": "Roxanne",
+  "position":"Dragon Tamer",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
+},
+"player17": {
+ "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkeOHNY-WjupGhy7X-D98FHd8w_sVRKR0ULeol-n8XFR7HbGwE&usqp=CAU",
+  "name": "serpentine",
+  "position":"Toadstool Hopper",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
+},
+"player18": {
+ "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdLVJ1JMElFtqKvCydl46vye26ZPmW8EYtV2GEwPC4oA12hAz-&usqp=CAU",
+  "name": "MacyMark",
+ "position":"Vine Swinger",
+  "uid":"Gr4PEkvRDlas2ide70Z1zRQuguz2",
+  "teamId": "team3"
 }
 }
