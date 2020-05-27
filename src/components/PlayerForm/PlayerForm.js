@@ -12,64 +12,83 @@ class PlayerForm extends React.Component {
   state = {
     playerName: '',
     playerPosition: '',
-    
+    playerImageUrl: '',
+
   }
 
-  saveTeam = (e) => {
+  savePlayer = (e) => {
     e.preventDefault();
-    const { teamLocation, teamName } = this.state;
-    const { saveNewTeam } = this.props;
-    const newTeam = {
-      location: teamLocation,
-      name: teamName,
+    const { playerPosition, playerName, playerImageUrl } = this.state;
+    const { saveNewPlayer, teamId } = this.props;
+    const newPlayer = {
+      teamId,
+      position: playerPosition,
+      name: playerName,
+      imageUrl: playerImageUrl,
       uid: authData.getUid(),
     };
-    saveNewTeam(newTeam);
+    saveNewPlayer(newPlayer);
   }
 
   nameChange = (e) => {
     e.preventDefault();
-    this.setState({ teamName: e.target.value });
+    this.setState({ playerName: e.target.value });
   }
 
-  locationChange = (e) => {
+  positionChange = (e) => {
     e.preventDefault();
-    this.setState({ teamLocation: e.target.value });
+    this.setState({ playerPosition: e.target.value });
+  }
+
+  imageUrlChange = (e) => {
+    e.preventDefault();
+    this.setState({ playerImageUrl: e.target.value });
   }
 
   render() {
-    const { teamName, teamLocation } = this.state;
+    const { playerName, playerPosition, playerImageUrl } = this.state;
 
     return (
-      <div className="TeamForm">
+      <div className="PlayerForm">
         <form className="col-6 offset-3">
           <div className="formgroup">
-            <label htmlFor="team-name">Team Name</label>
+            <label htmlFor="player-name">Player Name</label>
             <input
             type="text"
             className="form-control"
-            id="team-name"
-            placeholder="Tiddlywinks"
-            value={teamName}
+            id="player-name"
+            placeholder="IvyMeadows"
+            value={playerName}
             onChange={this.nameChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="team-location">Description</label>
+            <label htmlFor="player-position">Player's Position</label>
             <input
               type="text"
               className="form-control"
-              id="team-location"
-              placeholder="location location"
-              value={teamLocation}
-              onChange={this.locationChange}
+              id="player-position"
+              placeholder="Dragon Tamer"
+              value={playerPosition}
+              onChange={this.positionChange}
             />
           </div>
-          <button className="btn btn-dark" onClick={this.saveTeam}>Save Board</button>
+          <div className="form-group">
+            <label htmlFor="player-imageUrl">Player's Image</label>
+            <input
+              type="text"
+              className="form-control"
+              id="player-imageUrl"
+              placeholder="photo here"
+              value={playerImageUrl}
+              onChange={this.imageUrlChange}
+            />
+          </div>
+          <button className="btn btn-dark" onClick={this.savePlayer}>Save Player</button>
         </form>
       </div>
     );
   }
 }
 
-export default TeamForm;
+export default PlayerForm;
