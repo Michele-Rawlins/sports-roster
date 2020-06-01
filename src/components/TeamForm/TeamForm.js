@@ -86,9 +86,10 @@ class TeamForm extends React.Component {
               onChange={this.locationChange}
             />
           </div>
-          { isEditing
+          {
+          isEditing
             ? <button className="btn btn-dark" onClick={this.updateTeam}>Update Team</button>
-            : <button className="btn btn-dark" onClick={this.saveTeam}>Save Board</button>
+            : <button className="btn btn-dark" onClick={this.saveTeam}>Save Team</button>
           }
           </form>
       </div>

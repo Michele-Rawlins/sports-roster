@@ -6,14 +6,29 @@ import authData from '../../helpers/data/authData';
 
 class PlayerForm extends React.Component {
   static propTypes = {
+    teamId: PropTypes.string.isRequired,
     saveNewPlayer: PropTypes.func.isRequired,
+    putPlayer: PropTypes.func.isRequired,
+    player: PropTypes.object.isRequired,
   }
 
   state = {
     playerName: '',
     playerPosition: '',
     playerImageUrl: '',
+    isEditing: false,
+  }
 
+  componentDidMount() {
+    const { player } = this.props;
+    if (player.name) {
+      this.setState({
+        playerName: player.name,
+        playerImageUrl: player.imageUrl,
+        playerPosition: player.position,
+        isEditing: true,
+      });
+    }
   }
 
   savePlayer = (e) => {
@@ -45,8 +60,24 @@ class PlayerForm extends React.Component {
     this.setState({ playerImageUrl: e.target.value });
   }
 
+  updatePlayer = (e) => {
+    e.preventDefault();
+    const { playerImageUrl, playerName, playerPosition } = this.state;
+    const { teamId, putPlayer, player } = this.props;
+    const updatedPlayer = {
+      teamId,
+      imageUrl: playerImageUrl,
+      name: playerName,
+      position: playerPosition,
+      uid: authData.getUid(),
+    };
+    putPlayer(player.id, updatedPlayer);
+  }
+
   render() {
-    const { playerName, playerPosition, playerImageUrl } = this.state;
+    const {
+      playerName, playerPosition, playerImageUrl, isEditing,
+    } = this.state;
 
     return (
       <div className="PlayerForm">
@@ -84,7 +115,11 @@ class PlayerForm extends React.Component {
               onChange={this.imageUrlChange}
             />
           </div>
-          <button className="btn btn-dark" onClick={this.savePlayer}>Save Player</button>
+          {
+            isEditing
+              ? <button className="btn btn-dark" onClick={this.updatePlayer}>Update Player</button>
+              : <button className="btn btn-dark" onClick={this.savePlayer}>Save Player</button>
+          }
         </form>
       </div>
     );
