@@ -24,7 +24,7 @@ const getSingleTeam = (teamId) => axios.get(`${baseUrl}/teams/${teamId}.json`);
 
 const saveTeam = (newTeam) => axios.post(`${baseUrl}/teams.json`, newTeam);
 
-const deleteTeam = (teamId) => axios.delete(`${baseUrl}/teams${teamId}.json`);
+const deleteTeam = (teamId) => axios.delete(`${baseUrl}/teams/${teamId}.json`);
 
 const updateTeam = (teamId, updatedTeam) => axios.put(`${baseUrl}teams/${teamId}.json`, updatedTeam);
 
